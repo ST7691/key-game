@@ -81,19 +81,20 @@
 <button class="btn  rounded-full bg-[#360490] text-white px-4">
   score
  <img src="images/heart-2.svg" alt="">
- <span id="current-score">0</span>
+ <span id="set-score">0</span>
 </button>
 </div>
   </div>
    </section>
   <!--score -->
-  <section class="score min-h-screen  flex justify-center items-center hidden">
+  <section id="final-score" class="flex justify-center items-center min-h-screen hidden">
   <div class=" text-center  bg-[#98979733] rounded-xl space-y-6 p-4">
+   <h3 class="3xl  text-white">Game Over !!!</h3>
       <h2 class=" text-8xl  text-white">
         <span class="font-extrabold">Score :</span> 
-        <span class="font-extrabold">14</span>
+        <span id="last-score" class="font-extrabold">20</span>
       </h2>  
-        <button class="btn bg-white text-black border-none text-xl">Play Now</button>
+        <button onclick="Game()" class="btn bg-white text-black border-none text-xl">Play Again</button>
        <p class=" text-black">Practice will make you Pro</p>
   </div>
   </section>

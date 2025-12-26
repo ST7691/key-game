@@ -22,37 +22,62 @@ console.log(playerPressed,CurrentAlphabet)
 
 if(playerPressed === CurrentAlphabet){
     console.log('you got a point ');
-    // console.log('you have press ',CurrentAlphabet);
 
-    // update score
-    const CurrentScoreElement = document.getElementById('current-score');
-    const CurrentScoreText = CurrentScoreElement.innerText;
-    const CurrentScore = parseInt(CurrentScoreText);
-    console.log(CurrentScore);
-    // new score set
-    const newScore = CurrentScore + 1;
-    // score show
-    CurrentScoreElement.innerText = newScore;
-    // remove background
-    removeBackgroundElementById(CurrentAlphabet);
+    const setScore = getTextValueElementById('set-score');
+    // console.log(CurrentScore);
+    const updateScore = setScore + 1;
+    setElementById('set-score',updateScore);
+   // remove background
+     removeBackgroundElementById(CurrentAlphabet);
     continueGame();
+
+
+// ------------------------------------------------
+    // console.log('you have press ',CurrentAlphabet);
+    // update score
+    // const CurrentScoreElement = document.getElementById('current-score');
+    // const CurrentScoreText = CurrentScoreElement.innerText;
+    // const CurrentScore = parseInt(CurrentScoreText);
+    // console.log(CurrentScore);
+    // new score set
+    
+    // const newScore = CurrentScore + 1;
+    // score show
+    // CurrentScoreElement.innerText = newScore;
+    // ---------------------------
+ 
+ 
 }
 else{
     console.log('wrong you lost a point')
+
+   const currentLife =  getTextValueElementById('current-life');
+   const updateLife = currentLife - 1;
+   setElementById('current-life',updateLife);
+
+//    man komle 0 hole gamee ses hobe
+if(updateLife === 0){
+    // console.log('game over');
+    gameOver();
+}
+
+    // ----------------------------------
     // current life 
-    const currentLifeElement = document.getElementById('current-life');
-    const currentLifeText = currentLifeElement.innerText;
-    const currentLife = parseInt(currentLifeText);
-    console.log(currentLife);
+    // const currentLifeElement = document.getElementById('current-life');
+    // const currentLifeText = currentLifeElement.innerText;
+    // const currentLife = parseInt(currentLifeText);
+    // console.log(currentLife);
 
-    const newLife =currentLife - 1;
-     currentLifeElement.innerText = newLife;
+    // const newLife =currentLife - 1;
+    //  currentLifeElement.innerText = newLife;
+    // -----------------------------------------------------
 
 }
 }
-
 
 document.addEventListener('keyup',handleKeyboardKeyUpEvent);
+
+
 
 // alphabet random function
 function continueGame(){
@@ -69,7 +94,26 @@ ShowAlphabet.innerText = alphabet;
 
 // home screen
 function Game(){
+    // hide everything show play ground
       hideElementById('home-screen');
+      hideElementById('final-score');
       ShowElementById('play-ground');
+    //   reset score and life
+     setElementById('current-life', 5);
+     setElementById('set-score', 0);
       continueGame();
+}
+
+// game over function
+function gameOver(){
+     hideElementById('play-ground');
+     ShowElementById('final-score');
+    //  update final score
+    const lastScore =  getTextValueElementById('set-score');
+    console.log(lastScore);
+    setElementById('last-score',lastScore);
+    // clear alphabate background
+    const showAlphabetElement =  getElementTextById('show-alphabet');
+    // console.log(CurrentAlphabet);
+    removeBackgroundElementById(showAlphabetElement);
 }
