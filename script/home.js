@@ -13,13 +13,27 @@
 // key press captur
 function handleKeyboardKeyUpEvent(event){
     const playerPressed = event.key;
-  console.log('player press key : ',playerPressed);
-//   show key expeted key press
-const showAlphabetElement = document.getElementById('show-alphabet');
-const showAlphabet = showAlphabetElement.innerText;
-const CurrentAlphabet = showAlphabet.toLowerCase();
-console.log(playerPressed,CurrentAlphabet)
-
+    console.log('player press key:',playerPressed);
+    // stop the game esc
+    // if(playerPressed === 'Escape'){
+    //   gameOver();
+    // }
+    // // phoner jonno ami extra use korechi
+    // if(playerPressed === 'Enter'){
+    //         gameOver();
+    //  }
+    //  if(playerPressed === ' '){
+    //     gameOver();
+    //  }
+    if(playerPressed === 'Escape'|| playerPressed === 'Enter'||playerPressed === ' '){
+        gameOver();
+    }
+    //   show key expeted key press
+    const showAlphabetElement = document.getElementById('show-alphabet');
+    const showAlphabet = showAlphabetElement.innerText;
+    const CurrentAlphabet = showAlphabet.toLowerCase();
+    console.log(playerPressed,CurrentAlphabet)
+        
 if(playerPressed === CurrentAlphabet){
     console.log('you got a point ');
 
