@@ -14,28 +14,28 @@
     <main class="min-h-screen bg-[#010313] bg-[url('images/background.png')]  bg-no-repeat bg-center">
   <!-- home screen -->
    <section id="home-screen" class=" text-white  min-h-screen flex flex-col  items-center justify-center">
-    <div class="flex  flex-col  items-center gap-10"> 
-        <h1 class="font-anton text-8xl uppercase">ALPHABET CLASH</h1>
-        <p class="text-xl">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+    <div class="flex  flex-col  items-center  gap-2 lg:gap-10"> 
+        <h1 class="font-anton text-4xl md:text6xl lg:text-8xl  uppercase">ALPHABET CLASH</h1>
+        <p class=" text-sm lg:text-xl">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
       <button class="btn bg-white text-black" onclick="Game()">Play Now</button>
     </div>
    </section>
   <!-- play ground -->
    <section id="play-ground" class=" hidden ">
-    <div class="flex flex-col items-center gap-20 pt-20">
+    <div class="flex flex-col items-center gap-5 md:gap-10 lg:gap-20 pt-4 md:pt-10 lg:pt-20">
         <!-- screen -->
    <div>
-    <div class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-black bg-[#FFFFFFB3]" >
+    <div class="artboard artboard-horizontal  max-w-xs md:max-w-4xl w-full phone-6 border-[20px] rounded-2xl border-black bg-[#FFFFFFB3]" >
      <div class="flex justify-center ">
        <p class=" bg-[#2F2941] text-[#FFFFFF] rounded-b-xl p-4">Don't watch keyboard  while playing...</p>
      </div>
-     <div class="h-full flex justify-center items-center">
-      <p id="show-alphabet" class="uppercase text-9xl text-black font-extrabold pb-12">y</p>
+     <div class="h-full flex justify-center items-center ">
+      <p id="show-alphabet" class="uppercase text-5xl lg:text-9xl text-black font-extrabold pb-24 lg:pb-14">y</p>
      </div>
     </div>
    </div>
    <!-- key brode -->
-    <div>
+    <div class="">
       <div class="my-1 flex w-full justify-center gap-1">
           <kbd id="q" class="kbd">q</kbd>
           <kbd id="w" class="kbd">w</kbd>
@@ -72,13 +72,13 @@
     </div>
 <!-- life score -->
 <div class=" flex w-2/3 justify-between">
-  <button class="btn rounded-full bg-[#894189] text-white px-4">
+  <button class="btn rounded-full bg-[#894189] text-white lg:px-4">
     Life
   <img src="images/hert.svg" alt="">
   <span id="current-life">5</span>
 <!-- score update -->
 </button>
-<button class="btn  rounded-full bg-[#360490] text-white px-4">
+<button class="btn  rounded-full bg-[#360490] text-white lg:px-4">
   score
  <img src="images/heart-2.svg" alt="">
  <span id="set-score">0</span>
@@ -90,11 +90,11 @@
   <section id="final-score" class="flex justify-center items-center min-h-screen hidden">
   <div class=" text-center  bg-[#98979733] rounded-xl space-y-6 p-4">
    <h3 class="3xl  text-white">Game Over !!!</h3>
-      <h2 class=" text-8xl  text-white">
+      <h2 class=" text-4xl lg:text-8xl  text-white">
         <span class="font-extrabold">Score :</span> 
         <span id="last-score" class="font-extrabold">20</span>
       </h2>  
-        <button onclick="Game()" class="btn bg-white text-black border-none text-xl">Play Again</button>
+        <button onclick="Game()" class="btn bg-white text-black border-none text-sm lg:text-xl">Play Again</button>
        <p class=" text-black">Practice will make you Pro</p>
   </div>
   </section>
